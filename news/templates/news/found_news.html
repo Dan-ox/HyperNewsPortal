@@ -1,0 +1,14 @@
+<body>
+    {% for date, dic in news.items %}
+    <header>
+        {% for i in dic %}
+        <h2>{{ i.title }}</h2>
+        {% endfor %}
+    </header>
+        <ul>
+            {% for i in dic %}
+            <li><a target="_blank" href="/news/{{ i.link }}/">{{ i.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>

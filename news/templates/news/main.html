@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <h2>Hyper news</h2>
+    {% for date, dic in news.items %}
+    <h4>{{ date }}</h4>
+        <ul>
+            {% for i in dic %}
+          <li><a target="_blank" href="/news/{{ i.link }}/">{{ i.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <a href="/news/create/" target="_blank">Create news</a>
+    <form action="" method=GET>
+        <p>Search for news:</p>
+        <input type="text" name="q">
+        <p></p>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
